@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: html-css-js-service
+spec:
+  selector:
+    app: html-css-js-app
+  ports:
+    - port: 80
+      targetPort: 80
+  type: NodePort

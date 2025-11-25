@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-css-js-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: html-css-js-app
+  template:
+    metadata:
+      labels:
+        app: html-css-js-app
+    spec:
+      containers:
+        - name: html-css-js-container
+          image: nexus.imcc.com/repository/docker-hosted/html-css-js-project:latest
+          ports:
+            - containerPort: 80
